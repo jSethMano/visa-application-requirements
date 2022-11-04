@@ -11,6 +11,7 @@ function App() {
       <Header />
       <main className='px-2'>
         <Routes>
+
           <Route path='/visa-requirements/:uId' element={<Main />} />
           <Route path='*' element={<NoRecordFound />}/>
         </Routes>
