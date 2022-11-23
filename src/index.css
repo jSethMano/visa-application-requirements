@@ -8,17 +8,6 @@
       background-color: #F5F5F5;
 
     }
-    h1 {
-      @apply leading-[32px] text-[26px] lg:text-[32px] lg:leading-[38px];
-    }
-    h2 {
-      @apply leading-[30px] text-[24px] lg:text-[28px] lg:leading-[38px];
-    }
-    h3 {
-      @apply leading-[26px] text-[22px] lg:text-[24px] lg:leading-[38px];
-    }
-    h4 {
-      @apply text-[20px] leading-[38px];
-    }
+  
   }
   
