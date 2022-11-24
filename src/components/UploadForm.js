@@ -35,7 +35,7 @@ const UploadForm = () => {
 	useEffect(() => {
 		getVisaApplicationById()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	})
+	}, [])
 
 	if (!data) return null
 
@@ -52,7 +52,7 @@ const UploadForm = () => {
 							status={d.requirementStatusValue}
 							requirementsName={d.visaRequirementName}
 							requirementsFilePath={d.filePath}
-						></Card>
+						/>
 					))}
 			</div>
 		</div>

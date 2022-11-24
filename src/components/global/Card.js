@@ -35,6 +35,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 
 	useEffect(() => {
 		console.log(files)
+
 		if (files.length > 0) {
 			handleFileChange(reqId)
 		}
@@ -43,11 +44,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 
 	let formData = createFormData()
 
-	const handleFileChange = async (vId, target) => {
-		console.log(vId)
-		console.log(target)
-		console.log(files)
-
+	const handleFileChange = async (vId) => {
 		for (var i = 0; i < files.length; i++) {
 			formData.append('file', files[0], files[0].name)
 			let imgUploadUrl = `${process.env.REACT_APP_ERP_ENDPOINT}/api/Azure/blob/upload?folder=visa-applications`
@@ -62,7 +59,6 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 					fileName: files[0].name,
 				}
 
-				console.log(vId)
 				updateRequirementFilepath(vId, newFile.filepath)
 			}
 		}
