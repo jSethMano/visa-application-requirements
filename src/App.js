@@ -10,9 +10,7 @@ function App() {
 		<React.Fragment>
 			<div className="flex flex-col justify-center items-center">
 				<Header />
-				<PageAlert title="You're good to go" variant="info">
-					All your files are submitted and subject for approval
-				</PageAlert>
+
 				<main className="w-11/12">
 					<Routes>
 						<Route path="/visa-requirements/:uId" element={<Main />} />
