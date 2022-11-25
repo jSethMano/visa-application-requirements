@@ -17,7 +17,7 @@ const Popup = () => {
 			initial="show"
 			animate="hidden"
 			transition={{ duration: 3 }}
-			className="z-999 absolute top-2 right-4 px-4 py-3 rounded bg-white shadow-sm flex items-center gap-2"
+			className=" z-999 absolute top-2 right-4 px-4 py-3 rounded bg-white shadow-sm flex items-center gap-3 "
 		>
 			<div>
 				<BsCheckCircle className="text-green-500" />

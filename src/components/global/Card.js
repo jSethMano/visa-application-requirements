@@ -86,8 +86,13 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 
 	return (
 		<React.Fragment>
-			<Popup />
-			<motion.form initial={{ scale: 0 }} animate={{ scale: '100%' }} onSubmit={formSubmitHandler}>
+			{showPopup && <Popup />}
+			<motion.form
+				initial={{ scale: 0 }}
+				animate={{ scale: '100%' }}
+				onSubmit={formSubmitHandler}
+				className="lg:flex-wrap"
+			>
 				<button
 					className={classNames(
 						'flex justify-center items-center gap-2 z-1 rounded-t-md px-6 py-2 text-xs text-white',
@@ -143,7 +148,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 				{forApprovalStatus && (
 					<div className="border-b border-r border-l z-99 relative bottom-1 shadow rounded-tr-md rounded-b-md bg-white px-6 py-4">
 						<p className="text-lg font-bold text-gray-900">{requirementsName}</p>
-						<p className="text-xs  text-gray-600">
+						<p className="text-xs  text-gray-600 truncate">
 							{requirementsFilePath.replace('https://kmcstorage1.blob.core.windows.net/visa-applications/', '')}
 						</p>
 						<button
@@ -172,7 +177,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 				{status === 'Approved' && (
 					<div className="border-b-2 border-r-2 border-l-2 border-t-2 border-blue-500 z-99 relative bottom-1  rounded-tr-md rounded-b-md bg-white px-6 py-4">
 						<p className="text-lg font-bold text-blue-400">{requirementsName}</p>
-						<p className="text-sm  text-gray-600">
+						<p className="text-sm  text-gray-600 truncate">
 							{requirementsFilePath.replace('https://kmcstorage1.blob.core.windows.net/visa-applications/', '')}
 						</p>
 					</div>

@@ -3,7 +3,6 @@ import Main from './components/Main'
 import Header from './components/Header'
 import NoRecordFound from './components/NoRecordFound'
 import { Routes, Route } from 'react-router-dom'
-import { PageAlert } from './components/global/PageAlert'
 
 function App() {
 	return (
@@ -11,7 +10,7 @@ function App() {
 			<div className="flex flex-col justify-center items-center">
 				<Header />
 
-				<main className="w-11/12">
+				<main className="w-11/12 lg:w-1/2">
 					<Routes>
 						<Route path="/visa-requirements/:uId" element={<Main />} />
 						<Route path="*" element={<NoRecordFound />} />

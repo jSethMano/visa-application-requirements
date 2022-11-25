@@ -11,13 +11,14 @@ const Main = () => {
 	const data = getApplicationById(uId)
 
 	useEffect(() => {
-		data.then((d) => setApplicationData(d))
+		data.then((d) => setApplicationData(d)).catch((e) => window.alert(e))
+		console.log(data)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [toggleFetch])
 
 	return (
 		<Context.Provider value={{ applicationData, setApplicationData, data, setToggleFetch }}>
-			<div className="px-4 py-4 bg-white rounded ">
+			<div className="px-4 py-4 bg-white rounded  ">
 				{/* <button onClick={() => setToggleFetch((prevState) => !prevState)}>Toggle</button> */}
 				<UploadForm />
 			</div>
