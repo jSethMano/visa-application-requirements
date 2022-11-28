@@ -1,16 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Card from './global/Card'
 import { useContext } from 'react'
 import { Context } from '../components/context/ContextProvider'
-import { PageAlert } from './global/PageAlert'
 
 const UploadForm = () => {
 	const { applicationData } = useContext(Context)
-	let now = new Date()
-	console.log(now.getHours())
 
 	return (
-		<div>
+		<div className="bg-white px-6 py-4">
 			{/* <div className="border rounded-t-lg">Test</div> */}
 			<h1 className="font-barlow font-bold text-2xl mb-2">
 				<span className="text-branding-pumpkin">Visa</span> Requirements

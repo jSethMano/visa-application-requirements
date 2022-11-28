@@ -1,8 +1,7 @@
 import { apiCall } from '../service/APIService'
 
 export const getApplicationById = async (uId) => {
-	let tokenStr =
-		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjZlMWJiZmI2LTU3ODktNGIxZC1hYjg4LWM3NmI5M2JlMmU0NCIsImVtYWlsIjoiZ3Vlc3RAa21jLnNvbHV0aW9ucyIsInVuaXF1ZV9uYW1lIjoiZ3Vlc3RAa21jLnNvbHV0aW9ucyIsInJvbGUiOiJndWVzdCIsIm5iZiI6MTY2OTM1NzA0MSwiZXhwIjoxNjY5NDQzNDQxLCJpYXQiOjE2NjkzNTcwNDF9.muG2YCZ2hniN3Yog799e8q4-1Cw06TFDkTrYyIXMemc'
+	let tokenStr = localStorage.getItem('token')
 
 	let webUrl = `${process.env.REACT_APP_ERP_ENDPOINT}/api/Visa/applications/${uId}`
 

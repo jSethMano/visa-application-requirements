@@ -6,7 +6,7 @@ import { BsCheckAll } from 'react-icons/bs'
 import { apiCall } from '../../service/APIService'
 import { useContext } from 'react'
 import { Context } from '../context/ContextProvider'
-import Popup from './Popup'
+// import Popup from './Popup'
 
 const Card = ({ status, requirementsName, requirementsFilePath, requirementId }) => {
 	const statusToClassName = {
@@ -16,7 +16,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 	}
 
 	const [forApprovalStatus, setForApprovalStatus] = useState(false)
-	const [showPopup, setShowPopup] = useState(false)
+	// const [showPopup, setShowPopup] = useState(false)
 	const [reqId, setReqId] = useState(false)
 
 	const { files, setFiles, handleDragDropEvent, createFormData } = useFileUpload()
@@ -86,7 +86,7 @@ const Card = ({ status, requirementsName, requirementsFilePath, requirementId })
 
 	return (
 		<React.Fragment>
-			{showPopup && <Popup />}
+			{/* {showPopup && <Popup />} */}
 			<motion.form
 				initial={{ scale: 0 }}
 				animate={{ scale: '100%' }}
