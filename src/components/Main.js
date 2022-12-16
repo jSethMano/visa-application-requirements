@@ -5,6 +5,8 @@ import { getApplicationById } from '../query/get-application-by-id'
 import { useParams } from 'react-router-dom'
 import Header from './Header'
 
+import { getToken } from '../query/post-token'
+
 const Main = () => {
 	const [applicationData, setApplicationData] = useState({})
 	const [toggleFetch, setToggleFetch] = useState(false)
@@ -12,7 +14,10 @@ const Main = () => {
 	const data = useCallback(() => getApplicationById(uId), [uId])
 
 	useEffect(() => {
-		getApplicationById(uId).then((d) => setApplicationData(d))
+		getToken().then((data) => {
+			let token = data.token
+			getApplicationById(uId, token).then((d) => setApplicationData(d))
+		})
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [toggleFetch])
